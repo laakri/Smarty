@@ -1,0 +1,79 @@
+<!-- Landing Page 
+<div [class.fade-out]="showGameIntro">
+  <div class="imaginative-introduction">
+    <div class="portal-animation">
+      <div class="portal-outer"></div>
+      <div class="portal-inner"></div>
+    </div>
+    <div class="text-content">
+      <h1>مرحبًا بك في عالم الكلمات الساحرة!</h1>
+      <p>انطلق في رحلة مليئة بالمغامرات الكونية لاستكشاف قوة الكلمات.</p>
+      <button class="start-button">ابدأ الاستكشاف</button>
+    </div>
+  </div>
+</div>
+--><!-- Word Game Section -->
+
+<button class="aud" (click)="toggleMute()">
+  <i *ngIf="isMuted" class="material-icons">volume_off</i>
+  <i *ngIf="!isMuted" class="material-icons">volume_up</i>
+</button>
+<!-- Add this code within your template -->
+<!-- Add this code within your template -->
+<div class="volume-control">
+  <input
+    color="primary"
+    type="range"
+    id="volume"
+    min="0"
+    max="1"
+    step="0.1"
+    [(ngModel)]="audioPlayer.volume"
+    (input)="updateVolume()"
+  />
+</div>
+
+<div [class.fade-in]="showGameIntro === false" class="game-section">
+  <div class="game-content">
+    <div class="game-overlay">
+      <span class="question-badge">{{ questionNumber }}</span>
+      <h2 class="question">{{ currentQuestion }}</h2>
+      <div class="letter-buttons">
+        <button
+          class="letter-button"
+          *ngFor="let letter of letters"
+          [class.selected]="selectedAnswer === letter"
+          (click)="selectAnswer(letter)"
+        >
+          {{ letter }}
+        </button>
+      </div>
+      <button class="submit-button">Next</button>
+    </div>
+  </div>
+
+  <div class="progress-bar">
+    <img
+      src="../../../assets/tcDhSwpUqxEHFko.png"
+      alt="Moon Start"
+      class="moon moon-start"
+    />
+    <mat-progress-bar
+      class="progress"
+      mode="determinate"
+      [value]="progressValue"
+      color="warn"
+    ></mat-progress-bar>
+    <img
+      src="../../../assets/superherdo.png"
+      alt="Rocket"
+      [class.rocket-in-progress]="progressValue < 100"
+      [style.left.%]="calculateRocketPosition()"
+    />
+    <img
+      src="../../../assets/lFhYZYOjmGMEGUz.png"
+      alt="Moon End"
+      class="moon moon-end"
+    />
+  </div>
+</div>

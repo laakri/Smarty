@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+
+html,
+body {
+
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--darkcolor);
+    background: #fff;
+    font-family: 'Noto Sans Arabic', sans-serif;  
+    --bordercolor: #2f353c;
+    --darkcolor: #0c1017;
+    --soft-darkcolor: #171a22;
+    --whitecolor: #e2e2e2;
+    --soft-whitecolor: #f0f0f0;
+    --graycolor: #8a8d8e;
+    --maincolor: #4b66df;
+    --maintranscolor: #3b7fed71;
+    --secendcolor: #c04e14;
+    --buttonactive:#2e37469c;
+}
+
+a,
+button {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--whtiecolor);
+}
+
+.fas {
+  font-size: 27px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/************ scroll bar ****************/
+::-webkit-scrollbar {
+    width: 9px;
+    background-color: var(--bordercolor);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--maincolor);
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: var(--graycolor);
+  }
+  /********************* -Slick ***************************/
+
+.slick-prev:before,
+.slick-next:before {
+  color: #4E627D !important;
+  font-size: 28px !important ;
+  margin: -18px;
+}

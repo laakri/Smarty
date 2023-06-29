@@ -1,0 +1,19 @@
+
+mat-toolbar{
+    height: 70px;
+    background-color: black !important;
+    display: flex;
+    gap: 20px;
+}  
+  
+  
+.quiz-img{
+    margin-left: 40px;
+
+    height: 30px;
+    width: 30px;
+}
+.quiz-title {
+    font-size: 24px;
+    font-weight: bold;
+}

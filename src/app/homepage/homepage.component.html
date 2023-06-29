@@ -1,0 +1,140 @@
+<app-navbar></app-navbar>
+
+<div class="first-content">
+  <img
+    src="../../assets/spaceship.png"
+    data-aos-duration="2000"
+    data-aos="fade-right"
+    class="spaceship"
+    data-aos-easing="ease-in-sine"
+    alt=""
+  />
+  <img
+    src="../../assets/pink-moon.png"
+    data-aos="fade-left"
+    data-aos-duration="2000"
+    data-aos-easing="ease-in-sine"
+    class="moon"
+    alt=""
+  />
+  <div class="first-content-content">
+    <div>
+      <button mat-button class="announc-button">
+        تعرف أكثر على برامجنا.
+        <i class="material-icons">keyboard_arrow_left</i>
+        <i class="announc-button-more"> اقرأ المزيد </i>
+      </button>
+    </div>
+    <span>تعريف التطبيقة</span>
+    <p>
+      هي تطبيقة تعليمية بالواقع المعزز للأطفال تحتوي التطبيقة على مجموعة كبيرة
+      من الألعاب التعليمية التفاعلية
+    </p>
+    <div class="button-section">
+      <button mat-raised-button id="button1" routerLink="/auth/signup">
+        انضم إلينا
+      </button>
+      <button mat-raised-button id="button2" routerLink="/auth/signup">
+        <i class="material-icons">play_circle_fill</i> متجر التطبيقات
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--------------------------------------------------------------------------------------->
+<div class="two-content">
+  <div class="mainpage">
+    <div class="two-content-text">محتوى للأطفال</div>
+
+    <div class="two-content-flex">
+      <div class="two-content-left">
+        <div class="two-content-left-absolute">
+          <span>استكشف عالم التعلم التفاعلي للأطفال</span>
+        </div>
+      </div>
+
+      <div class="two-content-right">
+        <div class="two-content-right-item">
+          <span>محتوى تعليمي شيق</span>
+          <h3>
+            اعثر على محتوى تعليمي جذاب ومشوق للأطفال، بغض النظر عن ميزانيتك. لا
+            توجد أسعار ساعية، فقط تحديد الأسعار بناءً على المشروع.
+          </h3>
+        </div>
+        <div class="two-content-right-item item2">
+          <span>عمل ذو جودة عالية بسرعة</span>
+          <h3>اعثر على الشخص المناسب للبدء بالعمل على مشروعك في غضون دقائق.</h3>
+        </div>
+        <div class="two-content-right-item">
+          <span>دفعات محمية في كل مرة</span>
+          <h3>
+            تعرف دائمًا على المبلغ الذي ستدفعه مقدمًا. لن يتم إطلاق الدفعة حتى
+            توافق على العمل.
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--------------------------------------------------------------------------------------->
+<div class="containerTitle">ستحب التعلّم مع دوولينجو</div>
+<section class="container">
+  <div class="containerDesc">
+    <div class="row1">
+      <div class="row11">
+        <h3>كفاءة وفعالية</h3>
+        <p>
+          ا يلزم أن يكون التعلّم الفعّال أمرًا مملًا! قم ببناء مهاراتك يوميًا من
+          خلال تدريبات ممتعة وشخصيات مسلية.
+        </p>
+      </div>
+      <br />
+      <div class="row11">
+        <h3>كفاءة وفعالية</h3>
+        <p>
+          ا يلزم أن يكون التعلّم الفعّال أمرًا مملًا! قم ببناء مهاراتك يوميًا من
+          خلال تدريبات ممتعة وشخصيات مسلية.
+        </p>
+      </div>
+    </div>
+    <div class="rowimg">
+      <img src="../../assets/smartyRainbow.png" />
+    </div>
+    <div class="row1">
+      <div class="row11">
+        <h3>كفاءة وفعالية</h3>
+        <p>
+          ا يلزم أن يكون التعلّم الفعّال أمرًا مملًا! قم ببناء مهاراتك يوميًا من
+          خلال تدريبات ممتعة وشخصيات مسلية.
+        </p>
+      </div>
+      <br />
+      <div class="row11">
+        <h3>كفاءة وفعالية</h3>
+        <p>
+          ا يلزم أن يكون التعلّم الفعّال أمرًا مملًا! قم ببناء مهاراتك يوميًا من
+          خلال تدريبات ممتعة وشخصيات مسلية.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--------------------------------------------------------------------------------------->
+
+<div class="slick-carousel-content">
+  <div class="slick-carousel-content-size">
+    <div class="slick-carousel-content-head-text">المميزات</div>
+
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+    >
+      <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <img src="{{ slide.img }}" alt="dfaz" width="250px;" height="300px;" />
+      </div>
+    </ngx-slick-carousel>
+  </div>
+</div>
+<!--------------------------------------------------------------------------------------->
