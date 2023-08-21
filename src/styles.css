@@ -19,8 +19,8 @@ body {
     --whitecolor: #e2e2e2;
     --soft-whitecolor: #f0f0f0;
     --graycolor: #8a8d8e;
-    --maincolor: #4b66df;
-    --maintranscolor: #3b7fed71;
+    --maincolor: #8bacdc;
+    --hovercolor: #7399c2;
     --secendcolor: #c04e14;
     --buttonactive:#2e37469c;
 }
@@ -59,4 +59,15 @@ ul {
   color: #4E627D !important;
   font-size: 28px !important ;
   margin: -18px;
+}
+/*********************-Dialog***************************/
+
+mat-dialog-container {
+  background-color: var(--soft-darkcolor) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.backdropBackground {
+  background-color: #000000e5;
 }

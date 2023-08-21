@@ -4,4 +4,21 @@
   </a>
   <span class="quiz-title">Smarty Quiz </span>
   <!-- Add other header content as needed -->
+  <button class="aud" (click)="toggleMute()">
+    <i *ngIf="isMuted" class="material-icons">volume_off</i>
+    <i *ngIf="!isMuted" class="material-icons">volume_up</i>
+  </button>
+
+  <div class="volume-control">
+    <input
+      color="primary"
+      type="range"
+      id="volume"
+      min="0"
+      max="1"
+      step="0.1"
+      [(ngModel)]="audioPlayer.volume"
+      (input)="updateVolume()"
+    />
+  </div>
 </mat-toolbar>

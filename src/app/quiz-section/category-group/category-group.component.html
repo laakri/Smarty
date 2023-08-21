@@ -1,0 +1,12 @@
+<div class="game-zone">
+  <div class="category-group-cards">
+    <div class="category-card" *ngFor="let category of categories">
+      <h1>{{ category.name }}</h1>
+      <h2>{{ category.description }}</h2>
+      <a class="start-btn" [routerLink]="['/Quiz/questions', category._id]"
+        >ابدأ المغامرة!</a
+      >
+      <p>التقدم: 25%</p>
+    </div>
+  </div>
+</div>

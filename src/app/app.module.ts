@@ -4,6 +4,19 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { QuizSectionComponent } from './quiz-section/quiz-section.component';
+import { QuizHeaderComponent } from './quiz-section/quiz-header/quiz-header.component';
+import { QuizContentComponent } from './quiz-section/quiz-content/quiz-content.component';
+import { QuizIntroDialogComponent } from './quiz-section/quiz-intro-dialog/quiz-intro-dialog.component';
+import { FooterComponent } from './footer/footer.component';
+import { AgeGroupComponent } from './quiz-section/age-group/age-group.component';
+import { CategoryGroupComponent } from './quiz-section/category-group/category-group.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddGroupAgeComponent } from './dashboard/add-group-age/add-group-age.component';
+import { AddGroupCategoryComponent } from './dashboard/add-group-category/add-group-category.component';
+import { AddGroupQuestionComponent } from './dashboard/add-group-question/add-group-question.component';
 
 /* *******************MODELS******************** */
 
@@ -43,11 +56,6 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HomepageComponent } from './homepage/homepage.component';
-import { QuizSectionComponent } from './quiz-section/quiz-section.component';
-import { QuizHeaderComponent } from './quiz-section/quiz-header/quiz-header.component';
-import { QuizContentComponent } from './quiz-section/quiz-content/quiz-content.component';
 
 /* ********************************************* */
 
@@ -59,6 +67,14 @@ import { QuizContentComponent } from './quiz-section/quiz-content/quiz-content.c
     QuizSectionComponent,
     QuizHeaderComponent,
     QuizContentComponent,
+    QuizIntroDialogComponent,
+    FooterComponent,
+    AgeGroupComponent,
+    CategoryGroupComponent,
+    DashboardComponent,
+    AddGroupAgeComponent,
+    AddGroupCategoryComponent,
+    AddGroupQuestionComponent,
   ],
 
   imports: [

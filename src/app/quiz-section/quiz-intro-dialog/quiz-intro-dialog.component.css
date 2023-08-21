@@ -1,0 +1,46 @@
+.quiz-dialog-content {
+  background-image: url('../../../assets/old-book-page.png');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog-container {
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.dialog-header {
+  margin-bottom: 20px;
+}
+
+.dialog-heading {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+}
+
+.dialog-body {
+  margin-bottom: 30px;
+}
+
+.dialog-text {
+  font-size: 22px;
+  color: #000;
+  margin-bottom: 15px;
+  font-weight: 550;
+}
+
+.dialog-footer {
+  margin-top: 20px;
+}
+
+.start-button {
+  padding: 10px 30px;
+  background-color: #000;
+  color: #fff !important;
+  border-radius: 5px;
+}

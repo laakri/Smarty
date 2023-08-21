@@ -1,0 +1,41 @@
+<div class="game-zone">
+  <div class="new-category-form">
+    <mat-card>
+      <mat-card-title>Create New Category</mat-card-title>
+      <mat-card-content>
+        <form (submit)="onSubmit()">
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Name"
+              [(ngModel)]="newCategory.name"
+              name="name"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <textarea
+              matInput
+              placeholder="Description"
+              [(ngModel)]="newCategory.description"
+              name="description"
+              required
+            ></textarea>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Age Group ID"
+              [(ngModel)]="ageGroupId"
+              name="ageGroupId"
+              required
+            />
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit">
+            Create
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

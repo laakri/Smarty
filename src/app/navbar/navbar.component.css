@@ -1,12 +1,20 @@
-.mat-toolbar {
+/*.mat-toolbar {
     background-color: #425062;
 }
+
 .sub-toolbar {
     background: linear-gradient(135deg, #fff, #74859a, #fff, #74859a);
     height: 80px;
-    
   }
-  
+  */
+  .mat-toolbar {
+    background-color: #fff;
+}
+
+  .sub-toolbar {
+    background: linear-gradient(135deg, #fff, #80c8df, #fff, #80c8df);
+    height: 80px;
+  }
   .sub-toolbar-content {
     width: 1100px;
     margin: auto;
@@ -74,7 +82,7 @@
 }
 .center-content img{
     position: absolute;
-    border: 5px solid #74859a;
+    border: 5px solid #7cd1ee;
     top: 50%;
     z-index: 10;
     left: 50%;

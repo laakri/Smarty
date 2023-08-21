@@ -1,0 +1,32 @@
+<div class="game-zone">
+  <div class="new-age-group-form">
+    <mat-card>
+      <mat-card-title>Create New Age Group</mat-card-title>
+      <mat-card-content>
+        <form (submit)="onSubmit()">
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Name"
+              [(ngModel)]="newAgeGroup.name"
+              name="name"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="description"
+              [(ngModel)]="newAgeGroup.description"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit">
+            Create
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

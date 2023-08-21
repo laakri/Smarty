@@ -1,232 +1,63 @@
-.aud {
-  background-color: #e82e2e;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 18px;
-  cursor: pointer;
-  position: absolute;
-  top: 20;
-  right: 20px;
-}
-
-.aud:hover {
-  background-color: #ff5555;
-}
-/* Add this code to your component's CSS */
-.volume-control {
-  position: absolute;
-  top: 40;
-  right: 100px;
-  display: inline-block;
-  background-color: #e82e2e;
-  padding:13px 20px;
-  border-radius: 20px;
-}
-
-.volume-control input[type="range"] {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 8px;
-  background-color: #fff;
-  outline: none;
-  border-radius: 5px;
-  margin-top: 8px;
-}
-
-.volume-control input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: #fff;
-  cursor: pointer;
-}
-
-.volume-control input[type="range"]::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: #fff;
-  cursor: pointer;
-}
-
-
-
-.fade-out {
-    opacity: 0;
-    animation: fadeOutAnimation 1s ease-out forwards;
-  }
-  
-  @keyframes fadeOutAnimation {
-    from { opacity: 1; }
-    to { opacity: 0; }
-  }
-  
-  .fade-in {
-    opacity: 0;
-    animation: fadeInAnimation 1s ease-in forwards;
-  }
-  
-  @keyframes fadeInAnimation {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  /*********************************/
-  .imaginative-introduction {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f5f5f5;
-    color: #333;
-    font-family: "Arial", sans-serif;
-  }
-  
-  .portal-animation {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    animation: portalAnimation 5s infinite linear;
-  }
-  
-  .portal-outer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 8px solid #00baff;
-    border-radius: 50%;
-    box-sizing: border-box;
-    animation: portalOuterAnimation 5s infinite linear;
-  }
-  
-  .portal-inner {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: calc(100% - 40px);
-    height: calc(100% - 40px);
-    background-color: #f5f5f5;
-    border-radius: 50%;
-    box-shadow: 0 0 20px #00baff;
-    animation: portalInnerAnimation 3s infinite linear;
-  }
-  
-  @keyframes portalAnimation {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  @keyframes portalOuterAnimation {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-      border-color: #0099d6;
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes portalInnerAnimation {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-      box-shadow: 0 0 40px #00baff;
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  .text-content {
-    text-align: center;
-    margin-top: 30px;
-  }
-  
-  h1 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  p {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  
-  .start-button {
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    background-color: #00baff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .start-button:hover {
-    background-color: #0099d6;
-  }
-  
-  /* Word Game Section */
-
-
-.game-section {
-  background: url("../../../assets/bgContent2.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: calc(100vh - 70px);
+.game-zone {
+  max-width: 1100px;
+  height: calc(100vh - 80px);
+  margin: auto;
+  color: white;
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  align-items: center;
+
 }
 .game-content {
-  background-color: #f9f9f9b6;
+  margin-top: 100px;
+  background-color: #14253f7e;
   padding: 20px;
   border-radius: 10px;
+  height: max-content;
+  
 }
 
 
 .game-overlay {
   width: 600px;
   position: relative;
-  color: #000;
-  background-color: #f9f9f9;
+  background-color: #14253f;
   padding: 20px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
 }
 
+@keyframes vibration {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
 
+/* Fade-in Animation */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
+.success {
+  background: linear-gradient(to bottom right, #4caf50, #00e676);
+  animation:  fade-in 0.5s ease-out;
+}
+
+.fail {
+  background: linear-gradient(to bottom right, #e57373, #ff1744);
+  animation: vibration 0.5s ease-in-out;
+}
 .question {
   font-size: 24px;
   margin: 40px;
   text-align: center;
 }
 
-.letter-buttons {
+.option-buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -234,10 +65,10 @@
   margin-bottom: 20px;
 }
 
-.letter-button {
+.option-button {
   min-width: 40%;
   background-color: transparent;
-  border: #000 solid 1px;
+  border: #fff solid 1px;
   padding: 10px 20px;
   border-radius: 20px;
   font-size: 18px;
@@ -245,8 +76,8 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-.letter-button:hover {
-  background-color: #cc40ff;
+.option-button:hover {
+  background-color: var(--hovercolor);
 }
 
 .question-badge {
@@ -254,7 +85,7 @@
   top: 10px;
   right: 10px;
   padding: 8px 12px;
-  background-color: #e63c3c;
+  background-color: var(--maincolor);
   color: #fff;
   border-radius: 50px;
   font-size: 14px;
@@ -262,12 +93,12 @@
 }
 
 .selected {
-  background-color: #e63c3c;
+  background-color: var(--maincolor);
   color: #000;
 }
 
 .submit-button {
-  background-color: #e63c3c;
+  background-color: var(--maincolor);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -280,7 +111,7 @@
 }
 
 .submit-button:hover {
-  background-color: #cc40ff;
+  background-color: var(--hovercolor);
 }
 
 /* Animation */
@@ -302,7 +133,7 @@
   /*********************************/
   
   .progress-bar {
-    background-color: rgba(255, 255, 255, 0.558);
+    background-color: #5c7bab61;
     padding: 20px;
     border-radius: 10px;
     width: 640px;
@@ -314,9 +145,21 @@
     animation: pulse 4s infinite;
   }
   
-  
-  
- 
+ .rocket-path{
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    width: 480px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 60px;
+    bottom: 15px;
+    transform: translateX(-50%);
+    animation: pulse 4s infinite;
+    z-index: 10;
+ }
+
   .moon {
     width: 30px;
     height: 30px;

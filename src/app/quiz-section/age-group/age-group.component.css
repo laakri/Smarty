@@ -1,0 +1,68 @@
+.game-zone {
+    max-width: 1100px;
+    height: calc(100vh - 80px);
+    margin: auto;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .age-group-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .age-card {
+    background-color: transparent;
+    border-radius: 15px;
+    height: 300px;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    background-color: #14253f;
+  }
+  .age-card h1 {
+    font-size: 28px;
+  }
+  .age-card h2 {
+    font-size: 24px;
+  }
+  
+  .age-card p {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .start-btn {
+    background-color: rgba(92, 92, 92, 0.15);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .start-btn:hover {
+    background-color: #494949bf;
+  }
+  
+  .floating-objects {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+  }
+  
+  body, h2, p, button {
+    font-family: 'ArabicFont', Arial, sans-serif;
+  }
+  

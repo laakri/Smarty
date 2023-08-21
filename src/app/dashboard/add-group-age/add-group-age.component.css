@@ -1,0 +1,25 @@
+.game-zone {
+    max-width: 1100px;
+    height: calc(100vh - 80px);
+    margin: auto;
+    color: white ;
+    display: flex;
+    justify-content: center;
+  }
+  mat-card-title{
+    color: black;
+    margin: 20px;
+  }
+  .new-age-group-form {
+    max-width: 400px;
+    margin: 50px auto;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  button{
+    background-color: #37465c !important;
+    color: white !important;
+}

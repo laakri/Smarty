@@ -1,0 +1,15 @@
+div{
+    width: 100vw;
+    height: 100vh;
+    background-color: #0d192b;
+}
+mat-toolbar{
+    gap: 30px;
+    justify-content: center;
+    background-color: #1c2a3e !important;
+
+}
+button{
+    background-color: #37465c !important;
+    color: white !important;
+}

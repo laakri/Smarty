@@ -1,0 +1,51 @@
+<div class="game-zone">
+  <div class="new-age-group-form">
+    <mat-card>
+      <mat-card-title>Create New Age Group</mat-card-title>
+      <mat-card-content>
+        <form (ngSubmit)="onSubmit()">
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Category ID"
+              [(ngModel)]="question.categoryId"
+              name="categoryId"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Question Text"
+              [(ngModel)]="question.text"
+              name="text"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Options (comma-separated)"
+              [(ngModel)]="question.options"
+              name="options"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Correct Option"
+              [(ngModel)]="question.correctOption"
+              name="correctOption"
+              required
+            />
+          </mat-form-field>
+
+          <button mat-button type="submit" [disabled]="!formIsValid()">
+            Create Question
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

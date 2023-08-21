@@ -1,0 +1,13 @@
+<div>
+  <app-quiz-header></app-quiz-header>
+  <mat-toolbar>
+    <button mat-flat-button [routerLink]="['/Dashboard/add-age']">Age</button>
+    <button mat-flat-button [routerLink]="['/Dashboard/add-category']">
+      Category
+    </button>
+    <button mat-flat-button [routerLink]="['/Dashboard/add-questions']">
+      Question
+    </button>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</div>

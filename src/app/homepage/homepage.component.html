@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
 
 <div class="first-content">
+  <!--
   <img
     src="../../assets/spaceship.png"
     data-aos-duration="2000"
@@ -16,8 +17,13 @@
     data-aos-easing="ease-in-sine"
     class="moon"
     alt=""
-  />
+  />-->
+  <div class="boringbg">
+    <img src="../../assets/bggmain.png" alt="" />
+  </div>
   <div class="first-content-content">
+    <!--
+
     <div>
       <button mat-button class="announc-button">
         تعرف أكثر على برامجنا.
@@ -25,18 +31,21 @@
         <i class="announc-button-more"> اقرأ المزيد </i>
       </button>
     </div>
-    <span>تعريف التطبيقة</span>
-    <p>
-      هي تطبيقة تعليمية بالواقع المعزز للأطفال تحتوي التطبيقة على مجموعة كبيرة
-      من الألعاب التعليمية التفاعلية
-    </p>
-    <div class="button-section">
-      <button mat-raised-button id="button1" routerLink="/auth/signup">
-        انضم إلينا
-      </button>
-      <button mat-raised-button id="button2" routerLink="/auth/signup">
-        <i class="material-icons">play_circle_fill</i> متجر التطبيقات
-      </button>
+    -->
+    <div class="first-content-content-con">
+      <span>تعريف التطبيقة</span>
+      <div class="first-content-content-p">
+        هي تطبيقة تعليمية بالواقع المعزز للأطفال تحتوي التطبيقة على مجموعة كبيرة
+        من الألعاب التعليمية التفاعلية
+      </div>
+      <div class="button-section">
+        <button mat-raised-button id="button1" routerLink="/auth/signup">
+          انضم إلينا
+        </button>
+        <button mat-raised-button id="button2" routerLink="/auth/signup">
+          <i class="material-icons">play_circle_fill</i> متجر التطبيقات
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -138,3 +147,65 @@
   </div>
 </div>
 <!--------------------------------------------------------------------------------------->
+<div class="containerTitle">إتصل بنا</div>
+<section class="mainpage">
+  <div class="form-flex">
+    <div class="form-flex-left">
+      <img src="../../assets/superherdo.png" alt="" />
+    </div>
+    <div class="form-flex-right">
+      <form
+        (submit)="onSignup(signupForm); signupForm.resetForm()"
+        #signupForm="ngForm"
+        class="form-card"
+        dir="rtl"
+      >
+        <h1>أرسل رسالة</h1>
+
+        <mat-form-field appearance="outline">
+          <mat-label>ادخل اسمك</mat-label>
+          <input
+            matInput
+            type="text"
+            ngModel
+            name="name"
+            #name="ngModel"
+            required
+          />
+          <mat-error *ngIf="name.invalid">يجب عليك إدخال قيمة</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>ادخل بريدك الإلكتروني</mat-label>
+          <input
+            matInput
+            placeholder="example@smartykids.com"
+            ngModel
+            name="email"
+            #email="ngModel"
+            required
+          />
+          <mat-error *ngIf="email.invalid">يجب عليك إدخال قيمة</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>الرسالة</mat-label>
+          <textarea
+            matInput
+            ngModel
+            name="textA"
+            #textA="ngModel"
+            required
+          ></textarea>
+          <mat-error *ngIf="textA.invalid">يجب عليك إدخال قيمة</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button class="submit-button" type="submit">
+          إرسال
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

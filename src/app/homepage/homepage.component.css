@@ -6,9 +6,12 @@
 .first-content {
   overflow-x: hidden;
    width: 100%;
-   min-height: 550px;
-   background: linear-gradient(to bottom, #4E627D, white);
+   min-height: 780px;
+   /*background: linear-gradient(to bottom, #4E627D, white);*/
    position: relative;
+   display: flex;
+   align-items: center;
+   overflow-y: hidden;
 }
 
 .spaceship{
@@ -23,24 +26,12 @@
     bottom: 0;
     right: 5px;
 }
-.first-content-content {
-    max-width: 700px;
-    min-height: 300px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    /*backdrop-filter: blur(5px);
-    background-color: rgba(255, 255, 255, 0.068); 
-    box-shadow: 0 0 10px rgba(237, 237, 237, 0.3);*/
-  
+.boringbg img{
+  background-image: url(../../assets/bggmain.png);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: max-content;
 }
   .announc-button {
     height: 55px;
@@ -72,24 +63,51 @@
   .material-icons{
     color: yellow;
   }
+  .first-content-content {
+    background-image: url(../../assets/controller.png);
+    background-repeat: no-repeat;
+    min-width: 665px;
+    min-height: 500px;
+    position: absolute;
+    left: 100px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    /*
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.068); 
+    box-shadow: 0 0 10px rgba(237, 237, 237, 0.3);
+    */
   
+}
+
+.first-content-content-con{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,-30%);
+
+}
   .first-content-content span {
-    margin: 20px auto;
     font-size: 40px;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
   
-  .first-content-content p {
+  .first-content-content-p {
+    width: 500px;
     margin: 20px auto;
     line-height: 1.5;
     font-size: 25px;
     color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    margin-top: 10px;
   }
  .button-section{
   display: flex;
+  justify-content: center;
   gap: 20px;
  }
   #button1 {
@@ -117,7 +135,7 @@
 }
 
 .two-content-text {
-  margin: 30px 60px;
+  margin:  60px;
   font-size: 30px;
   text-align: end;
   color: var(--darkcolor);
@@ -144,7 +162,7 @@
   position: relative;
 }
 .two-content-left-absolute {
-  color: var(--whitecolor);
+  color: black;
   position: absolute;
   top: 40px;
   left: 40px;
@@ -268,4 +286,37 @@
 .slide img {
   margin: auto;
   border-radius: 10px;
+}
+/********************************************************************************/
+.form-flex{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.form-flex-left{
+  width: 40%;
+}
+.form-flex-left img{
+  width: 300px;
+  height: 300px;
+}
+.form-flex-right{
+  width: 40%;
+  margin-right: 40px;
+  
+}
+.form-card{
+  display: flex;
+  flex-direction: column;
+}
+.form-card button{
+  height: 45px;
+  width: 170px;
+  font-size: 20px;
+  background-color: rgb(34, 99, 230);
+  border-radius: 10px;
+  color: var(--whitecolor);
+}
+input{
+  float: right;
 }
