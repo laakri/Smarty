@@ -1,0 +1,23 @@
+<div
+  style="
+    background-color: #14253f;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+  "
+>
+  <h1>Congratulations!</h1>
+  <h2>You have completed the quiz.</h2>
+  <button
+    mat-flat-button
+    style="margin-top: 50px"
+    (click)="closeDialogAndNavigateToCategoryPage()"
+  >
+    Close
+  </button>
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { QuizService } from '../../service/quiz.service';
 
 @Component({
@@ -9,14 +10,14 @@ import { QuizService } from '../../service/quiz.service';
 export class AgeGroupComponent {
   ageGroups: any[] = [];
 
-  constructor(private QuizService: QuizService) {}
+  constructor(private quizService: QuizService, private router: Router) {}
 
   ngOnInit(): void {
     this.fetchAgeGroups();
   }
 
   fetchAgeGroups(): void {
-    this.QuizService.getAllAgeGroups().subscribe(
+    this.quizService.getAllAgeGroups().subscribe(
       (data: any[]) => {
         this.ageGroups = data;
       },
@@ -24,5 +25,11 @@ export class AgeGroupComponent {
         console.error('Error fetching age groups:', error);
       }
     );
+  }
+
+  startAdventure(ageGroupId: string): void {
+    localStorage.setItem('selectedAgeGroupId', ageGroupId);
+
+    this.router.navigate(['/Quiz/category', ageGroupId]);
   }
 }

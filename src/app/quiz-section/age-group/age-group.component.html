@@ -4,7 +4,7 @@
       <h1>الفئة العمرية</h1>
       <h2>{{ ageGroup.name }} سنوات</h2>
       <p>{{ ageGroup.description }}</p>
-      <button class="start-btn" [routerLink]="['/Quiz/category', ageGroup._id]">
+      <button class="start-btn" (click)="startAdventure(ageGroup._id)">
         ابدأ المغامرة!
       </button>
     </div>

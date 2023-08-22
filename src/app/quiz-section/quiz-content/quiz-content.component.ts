@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { QuizService } from '../../service/quiz.service'; // Update with the correct path
+import { QuizCompletionDialogComponent } from '../quiz-completion-dialog/quiz-completion-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-quiz-content',
@@ -18,10 +20,12 @@ export class QuizContentComponent implements OnInit {
   questions: any[] = [];
   totalQuestions!: number;
   progressNum: number = 0;
+  correctAnswers: number = 0;
 
   constructor(
     private route: ActivatedRoute,
-    private quizService: QuizService
+    private quizService: QuizService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -33,8 +37,6 @@ export class QuizContentComponent implements OnInit {
         console.error('Category ID not found in route params.');
       }
     });
-
-    // Calculate the total number of questions for the progress calculation
   }
 
   calculateRocketPosition(): number {
@@ -46,13 +48,30 @@ export class QuizContentComponent implements OnInit {
     if (!this.categoryId) {
       return;
     }
+    const localStorageKey = `${this.categoryId}`;
+    const correctAnswersKey = `${this.categoryId}_correctAnswers`;
+    const savedProgress = localStorage.getItem(localStorageKey);
+    const correctAnswersString = localStorage.getItem(correctAnswersKey);
 
     this.quizService.getQuestionsByCategory(this.categoryId).subscribe(
       (questions) => {
         if (questions.length > 0) {
           this.questions = questions; // Update the questions array
           this.questionIndex = 0; // Reset question index
+          this.correctAnswers = 0; // Reset question index
           this.totalQuestions = this.questions.length;
+          localStorage.setItem(
+            `${this.categoryId}_totalQuestions`,
+            this.totalQuestions.toString()
+          );
+
+          if (savedProgress && correctAnswersString) {
+            if (parseInt(savedProgress) !== this.totalQuestions) {
+              this.questionIndex = parseInt(savedProgress, 10);
+              this.correctAnswers = parseInt(correctAnswersString, 10);
+            }
+          }
+
           this.updateCurrentQuestion(this.questions[this.questionIndex]);
         }
       },
@@ -72,10 +91,18 @@ export class QuizContentComponent implements OnInit {
     // Check if selected answer is correct
     const currentQuestion = this.questions[this.questionIndex];
     const correctOptionIndex = currentQuestion.correctOption - 1;
+    localStorage.setItem(
+      `${this.categoryId}`,
+      (this.questionIndex + 1).toString()
+    );
 
     if (this.selectedAnswer === this.options[correctOptionIndex]) {
       // Answer is correct
-      console.log('Correct answer! Moving to the next question.');
+      this.correctAnswers++;
+      localStorage.setItem(
+        `${this.categoryId}_correctAnswers`,
+        this.correctAnswers.toString()
+      );
       this.applyBackgroundColor('success');
       setTimeout(() => {
         this.removeBackgroundColorClasses();
@@ -83,7 +110,6 @@ export class QuizContentComponent implements OnInit {
       }, 2000); // Adjust the delay time as needed
     } else {
       // Answer is incorrect
-      console.log('Incorrect answer. Showing correct answer.');
       this.applyBackgroundColor('fail');
       setTimeout(() => {
         this.showCorrectAnswer(correctOptionIndex);
@@ -101,8 +127,14 @@ export class QuizContentComponent implements OnInit {
       this.updateCurrentQuestion(this.questions[this.questionIndex]);
       this.selectedAnswer = ''; // Reset selected answer for the next question
     } else {
-      // All questions answered, handle completion here
-      console.log('Quiz completed!');
+      // All questions answered, open completion dialog
+      const dialogRef = this.dialog.open(QuizCompletionDialogComponent, {
+        disableClose: true,
+        width: '500px',
+        height: '300px',
+      });
+
+      dialogRef.componentInstance.dialogRef;
     }
   }
 

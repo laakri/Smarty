@@ -56,6 +56,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { QuizCompletionDialogComponent } from './quiz-section/quiz-completion-dialog/quiz-completion-dialog.component';
 
 /* ********************************************* */
 
@@ -75,6 +76,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     AddGroupAgeComponent,
     AddGroupCategoryComponent,
     AddGroupQuestionComponent,
+    QuizCompletionDialogComponent,
   ],
 
   imports: [
